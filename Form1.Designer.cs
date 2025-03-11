@@ -39,7 +39,8 @@
             this.btn_search = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.search_box = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.btn_status = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_exit
@@ -92,6 +93,7 @@
             this.btn_edit.TabIndex = 3;
             this.btn_edit.Text = "Edit";
             this.btn_edit.UseVisualStyleBackColor = false;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // btn_remove
             // 
@@ -104,6 +106,7 @@
             this.btn_remove.TabIndex = 4;
             this.btn_remove.Text = "Remove";
             this.btn_remove.UseVisualStyleBackColor = false;
+            this.btn_remove.Click += new System.EventHandler(this.btn_remove_Click);
             // 
             // btn_add
             // 
@@ -116,6 +119,7 @@
             this.btn_add.TabIndex = 5;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = false;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_reset
             // 
@@ -128,6 +132,7 @@
             this.btn_reset.TabIndex = 6;
             this.btn_reset.Text = "Reset";
             this.btn_reset.UseVisualStyleBackColor = false;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
             // btn_search
             // 
@@ -140,42 +145,55 @@
             this.btn_search.TabIndex = 7;
             this.btn_search.Text = "Search";
             this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            this.btn_search.Enter += new System.EventHandler(this.btn_search_Click);
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(132, 88);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1402, 329);
+            this.listBox1.Size = new System.Drawing.Size(585, 329);
             this.listBox1.TabIndex = 8;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // search_box
             // 
             this.search_box.FormattingEnabled = true;
             this.search_box.Location = new System.Drawing.Point(132, 42);
             this.search_box.Name = "search_box";
-            this.search_box.Size = new System.Drawing.Size(639, 21);
+            this.search_box.Size = new System.Drawing.Size(896, 21);
             this.search_box.TabIndex = 10;
             // 
-            // label1
+            // listBox2
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(3, 428);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Info";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(748, 88);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(280, 329);
+            this.listBox2.TabIndex = 12;
+            // 
+            // btn_status
+            // 
+            this.btn_status.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_status.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_status.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_status.Location = new System.Drawing.Point(27, 193);
+            this.btn_status.Name = "btn_status";
+            this.btn_status.Size = new System.Drawing.Size(75, 28);
+            this.btn_status.TabIndex = 13;
+            this.btn_status.Text = "Status";
+            this.btn_status.UseVisualStyleBackColor = false;
+            this.btn_status.Click += new System.EventHandler(this.btn_status_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1573, 450);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1041, 450);
+            this.Controls.Add(this.btn_status);
+            this.Controls.Add(this.listBox2);
             this.Controls.Add(this.search_box);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btn_search);
@@ -190,7 +208,6 @@
             this.Name = "Form1";
             this.Text = "MusicApp";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -206,7 +223,10 @@
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ComboBox search_box;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Button btn_status;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartReleases;
+
     }
 }
 

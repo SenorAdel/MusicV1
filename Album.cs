@@ -13,5 +13,9 @@ namespace MusicV1
         public string secondaryGenre;
         public string primaryStyle;
         public string secondaryStyle;
+        public override string ToString()
+        {
+            return $"{artist}, {title}, {catalogNo} ({release})";
+        }
     }
 }
